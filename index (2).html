@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPI Matematika — Deret Aritmetika | Kelas X</title>
+<style>
+:root{--navy:#16324f;--blue:#2463eb;--teal:#0f9d8a;--gold:#f6bd3b;--bg:#f3f7fc;--ink:#172033;--muted:#5b667a;--white:#fff;--pink:#fff0f2;--green:#e8fff5}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(120deg,#16324f,#2463eb);color:white;padding:28px 18px 24px;text-align:center}
+header .tag{display:inline-block;background:#ffffff25;border:1px solid #ffffff55;border-radius:30px;padding:5px 12px;font-size:.9rem}
+header h1{margin:12px 0 4px;font-size:clamp(1.7rem,4vw,2.6rem)}header p{margin:5px auto;max-width:800px}
+.wrap{max-width:1100px;margin:auto;padding:18px}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px auto}
+nav button,.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:bold;cursor:pointer;background:var(--blue);color:white;font-size:1rem}
+nav button{background:white;color:var(--navy);border:1px solid #d7e0ee}nav button.active,nav button:hover{background:var(--navy);color:white}
+.panel{display:none;background:white;border-radius:18px;padding:22px;margin:12px 0;box-shadow:0 5px 18px #1b315010;border:1px solid #e3eaf4}.panel.active{display:block}
+h2{color:var(--navy);margin-top:0}h3{color:#2453a6} .lead{font-size:1.08rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{border-radius:14px;padding:16px;background:#f4f8ff;border:1px solid #dfe9fa}
+.card.gold{background:#fff8e4;border-color:#f5df9c}.card.green{background:var(--green);border-color:#bcebd9}
+.math{font-size:1.22rem;font-weight:bold;color:#123f91;background:#eef4ff;padding:12px;border-radius:10px;text-align:center;margin:12px 0}
+.callout{border-left:5px solid var(--gold);background:#fff9e9;padding:12px 15px;border-radius:8px}
+table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid #dbe3ef;padding:10px;text-align:center}th{background:#eaf1ff;color:var(--navy)}
+label{display:block;font-weight:bold;margin:10px 0 5px}input[type=number],input[type=text],select,textarea{width:100%;padding:11px;border:1px solid #bdc9dc;border-radius:10px;font:inherit}
+input[type=range]{width:100%}.btn.secondary{background:var(--teal)}.btn.light{background:#eaf1ff;color:var(--navy)}.btn.gold{background:#e7a900;color:#172033}
+.result{padding:13px;border-radius:12px;background:#eefaf6;border:1px solid #bfe9db;margin:12px 0;font-weight:bold}
+.feedback{font-weight:bold;margin-top:10px}.correct{color:#087f5b}.wrong{color:#b42335}
+.question{padding:15px;background:#f7f9fd;border:1px solid #e1e8f3;border-radius:12px;margin:13px 0}
+footer{text-align:center;color:var(--muted);padding:25px 10px;font-size:.9rem}
+ul{padding-left:22px}.small{font-size:.92rem;color:var(--muted)}
+@media(max-width:600px){.wrap{padding:10px}.panel{padding:15px}nav button{flex:1 1 40%}header{padding:22px 12px}}
+</style>
+</head>
+<body>
+<header>
+ <span class="tag">MEDIA PEMBELAJARAN INTERAKTIF • KURIKULUM MERDEKA</span>
+ <h1>Deret Aritmetika</h1>
+ <p>Matematika Kelas X • SMKN 5 Kolaka Utara</p>
+ <p>Temukan pola, pahami rumus, lakukan simulasi, lalu uji pemahamanmu!</p>
+</header>
+<div class="wrap">
+<nav aria-label="Menu materi">
+ <button class="active" data-tab="tujuan">🎯 Tujuan</button>
+ <button data-tab="materi">📘 Materi</button>
+ <button data-tab="contoh">🧮 Contoh Soal</button>
+ <button data-tab="simulasi">🎮 Simulasi</button>
+ <button data-tab="kuis">✅ Kuis</button>
+ <button data-tab="refleksi">💭 Refleksi</button>
+</nav>
+
+<section id="tujuan" class="panel active">
+ <h2>🎯 Tujuan Pembelajaran</h2>
+ <p class="lead">Setelah mengikuti kegiatan ini, peserta didik diharapkan mampu:</p>
+ <div class="grid">
+  <div class="card"><h3>1. Memahami konsep</h3><p>Menjelaskan perbedaan barisan aritmetika dan deret aritmetika dengan benar.</p></div>
+  <div class="card"><h3>2. Menemukan pola</h3><p>Menentukan suku pertama (<b>a</b>), beda (<b>d</b>), suku ke-n (<b>Uₙ</b>), dan jumlah n suku pertama (<b>Sₙ</b>) secara teliti.</p></div>
+  <div class="card"><h3>3. Menerapkan</h3><p>Menyelesaikan masalah kontekstual, seperti tabungan dengan pertambahan tetap, dan menjelaskan langkah penyelesaiannya.</p></div>
+ </div>
+ <div class="callout"><b>Pertanyaan pemantik:</b> Dita menabung Rp5.000 pada minggu pertama. Setiap minggu, setoran bertambah Rp2.000. Bagaimana menghitung total tabungan selama 8 minggu tanpa menjumlahkan satu per satu secara panjang?</div>
+ <p><b>Alur belajar:</b> Amati → ajukan pertanyaan → kumpulkan data → olah pola → verifikasi → simpulkan.</p>
+</section>
+
+<section id="materi" class="panel">
+ <h2>📘 Materi Ajar</h2>
+ <div class="grid">
+  <div class="card"><h3>Barisan aritmetika</h3><p>Urutan bilangan yang selisih antara dua suku berurutan selalu tetap.</p><div class="math">2, 5, 8, 11, 14, …</div><p>Bedanya: <b>d = 5 − 2 = 3</b>.</p></div>
+  <div class="card"><h3>Deret aritmetika</h3><p>Penjumlahan suku-suku dari suatu barisan aritmetika.</p><div class="math">2 + 5 + 8 + 11 + 14 + …</div></div>
+ </div>
+ <h3>Istilah penting</h3>
+ <table><tr><th>Simbol</th><th>Nama</th><th>Arti</th></tr>
+ <tr><td>a</td><td>Suku pertama</td><td>Bilangan pertama pada barisan</td></tr><tr><td>d</td><td>Beda</td><td>Selisih antarsuku berurutan</td></tr>
+ <tr><td>n</td><td>Banyak suku</td><td>Jumlah suku yang dijumlahkan</td></tr><tr><td>Uₙ</td><td>Suku ke-n</td><td>Nilai suku pada urutan ke-n</td></tr><tr><td>Sₙ</td><td>Jumlah n suku pertama</td><td>Hasil penjumlahan dari U₁ sampai Uₙ</td></tr></table>
+ <h3>Rumus yang digunakan</h3>
+ <div class="math">Uₙ = a + (n − 1)d</div>
+ <div class="math">Sₙ = n/2 (a + Uₙ)</div>
+ <div class="math">Sₙ = n/2 [2a + (n − 1)d]</div>
+ <div class="card gold"><b>Tips memilih rumus:</b><ul><li>Jika diketahui <b>a, Uₙ, dan n</b>, gunakan Sₙ = n/2(a + Uₙ).</li><li>Jika diketahui <b>a, d, dan n</b>, gunakan Sₙ = n/2[2a + (n − 1)d].</li><li>Periksa kembali nilai n dan suku terakhir sebelum menghitung.</li></ul></div>
+</section>
+
+<section id="contoh" class="panel">
+ <h2>🧮 Contoh Soal dan Pembahasan</h2>
+ <div class="question"><h3>Contoh 1 — Pola bilangan</h3><p>Tentukan jumlah 6 suku pertama dari 5, 8, 11, 14, …</p>
+ <p><b>Diketahui:</b> a = 5, d = 3, n = 6.</p><p><b>Langkah 1: Cari suku ke-6</b></p><div class="math">U₆ = 5 + (6 − 1) × 3 = 20</div>
+ <p><b>Langkah 2: Hitung jumlahnya</b></p><div class="math">S₆ = 6/2 × (5 + 20) = 3 × 25 = 75</div><p><b>Jawaban:</b> S₆ = 75.</p></div>
+ <div class="question"><h3>Contoh 2 — Tabungan Dita</h3><p>Dita menabung Rp5.000 pada minggu pertama. Setiap minggu setoran bertambah Rp2.000. Berapa total setoran selama 8 minggu?</p>
+ <p><b>Diketahui:</b> a = 5.000, d = 2.000, n = 8.</p><p>U₈ = 5.000 + (8 − 1) × 2.000 = 19.000</p>
+ <div class="math">S₈ = 8/2 × (5.000 + 19.000) = 4 × 24.000 = Rp96.000</div>
+ <p><b>Jawaban:</b> Total tabungan selama 8 minggu adalah <b>Rp96.000</b>.</p></div>
+ <div class="callout"><b>Coba pikirkan:</b> Mengapa pasangan minggu ke-1 dan ke-8, minggu ke-2 dan ke-7, dan seterusnya memiliki jumlah yang sama?</div>
+</section>
+
+<section id="simulasi" class="panel">
+ <h2>🎮 Simulasi Interaktif: Atur Pola Deretmu!</h2>
+ <p>Ubah nilai suku pertama, beda, dan banyak suku. Tekan tombol untuk melihat tabel suku dan total jumlahnya.</p>
+ <div class="grid">
+  <div class="card"><label for="a">Suku pertama (a)</label><input id="a" type="number" value="5000" step="500"><label for="d">Beda (d)</label><input id="d" type="number" value="2000" step="500"><label for="n">Banyak suku (n): <span id="nLabel">8</span></label><input id="n" type="range" min="2" max="15" value="8" oninput="document.getElementById('nLabel').textContent=this.value"><button class="btn" onclick="runSimulation()">▶ Jalankan Simulasi</button></div>
+  <div class="card green"><h3>Hasil Simulasi</h3><div id="simResult" class="result">Atur nilai, lalu tekan “Jalankan Simulasi”.</div><p class="small">Simulasi ini dapat digunakan untuk tabungan, produksi, atau pola bilangan dengan beda tetap.</p></div>
+ </div>
+ <div id="simTable"></div>
+ <h3>Temukan polanya</h3><p>Amati tabel. Apakah nilai setiap suku bertambah dengan selisih yang sama? Coba ubah beda menjadi negatif atau nol, lalu amati perubahan jumlahnya.</p>
+</section>
+
+<section id="kuis" class="panel">
+ <h2>✅ Kuis Pemahaman</h2><p>Pilih satu jawaban untuk setiap soal, lalu tekan <b>Periksa Jawaban</b>.</p>
+ <form id="quizForm">
+ <div class="question"><p><b>1.</b> Apa yang dimaksud deret aritmetika?</p>
+ <label><input type="radio" name="q1" value="a"> Urutan bilangan yang tidak memiliki pola</label><label><input type="radio" name="q1" value="b"> Penjumlahan suku-suku barisan aritmetika</label><label><input type="radio" name="q1" value="c"> Hasil perkalian semua suku</label></div>
+ <div class="question"><p><b>2.</b> Beda dari 4, 7, 10, 13, … adalah …</p>
+ <label><input type="radio" name="q2" value="a"> 2</label><label><input type="radio" name="q2" value="b"> 3</label><label><input type="radio" name="q2" value="c"> 4</label></div>
+ <div class="question"><p><b>3.</b> Jika a = 6, d = 0, dan n = 9, maka S₉ adalah …</p>
+ <label><input type="radio" name="q3" value="a"> 15</label><label><input type="radio" name="q3" value="b"> 54</label><label><input type="radio" name="q3" value="c"> 60</label></div>
+ <div class="question"><p><b>4.</b> Diketahui a = 8, d = 4, n = 6. Nilai U₆ adalah …</p>
+ <label><input type="radio" name="q4" value="a"> 24</label><label><input type="radio" name="q4" value="b"> 28</label><label><input type="radio" name="q4" value="c"> 32</label></div>
+ <div class="question"><p><b>5.</b> Barisan 5, 8, 11, 14, … memiliki jumlah 6 suku pertama sebesar …</p>
+ <label><input type="radio" name="q5" value="a"> 65</label><label><input type="radio" name="q5" value="b"> 72</label><label><input type="radio" name="q5" value="c"> 75</label></div>
+ <button class="btn" type="button" onclick="checkQuiz()">Periksa Jawaban</button> <button class="btn light" type="reset" onclick="document.getElementById('quizResult').innerHTML=''">Ulangi Kuis</button>
+ </form><div id="quizResult" class="result" aria-live="polite"></div>
+</section>
+
+<section id="refleksi" class="panel">
+ <h2>💭 Refleksi Pembelajaran</h2><p>Lengkapi refleksi ini dengan jujur untuk mengetahui perkembangan belajarmu.</p>
+ <label for="r1">1. Hari ini saya menemukan bahwa …</label><textarea id="r1" rows="2" placeholder="Tuliskan hal baru yang kamu pahami..."></textarea>
+ <label for="r2">2. Bagian yang masih membingungkan bagi saya adalah …</label><textarea id="r2" rows="2" placeholder="Tuliskan bagian yang ingin kamu tanyakan..."></textarea>
+ <label for="r3">3. Untuk memeriksa jawaban, saya akan …</label><textarea id="r3" rows="2" placeholder="Misalnya: menghitung ulang atau menggunakan cara kedua..."></textarea>
+ <label for="mood">Seberapa yakin kamu memahami materi?</label><select id="mood"><option value="">Pilih jawaban</option><option>Sangat yakin — saya bisa menjelaskan kepada teman</option><option>Cukup yakin — saya bisa mengerjakan dengan sedikit bantuan</option><option>Masih perlu latihan dan bimbingan</option></select>
+ <button class="btn secondary" onclick="saveReflection()">Simpan / Cetak Refleksi</button><div id="reflectionResult" class="result" style="display:none"></div>
+ <p class="small">Catatan: tombol ini membuka dialog cetak browser agar refleksi dapat disimpan sebagai PDF atau dicetak.</p>
+</section>
+</div>
+<footer>MPI Matematika Kelas X • Deret Aritmetika • SMKN 5 Kolaka Utara</footer>
+<script>
+document.querySelectorAll('nav button').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+ btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');
+}));
+function fmt(x){return new Intl.NumberFormat('id-ID').format(x)}
+function runSimulation(){
+ const a=Number(document.getElementById('a').value),d=Number(document.getElementById('d').value),n=Number(document.getElementById('n').value);
+ if(!Number.isFinite(a)||!Number.isFinite(d)){document.getElementById('simResult').textContent='Masukkan angka yang valid.';return}
+ const vals=Array.from({length:n},(_,i)=>a+i*d),last=vals[n-1],sum=n*(a+last)/2;
+ document.getElementById('simResult').innerHTML=`a = ${fmt(a)} • d = ${fmt(d)} • n = ${n}<br>U<sub>${n}</sub> = ${fmt(last)}<br><strong>S<sub>${n}</sub> = ${fmt(sum)}</strong>`;
+ let rows=vals.map((v,i)=>`<tr><td>${i+1}</td><td>${fmt(v)}</td><td>${i===0?'—':fmt(v-vals[i-1])}</td><td>${fmt(vals.slice(0,i+1).reduce((x,y)=>x+y,0))}</td></tr>`).join('');
+ document.getElementById('simTable').innerHTML=`<table><tr><th>Suku ke-</th><th>U<sub>n</sub></th><th>Beda</th><th>Jumlah sementara</th></tr>${rows}</table><p class="small">Rumus yang digunakan: Uₙ = a + (n − 1)d dan Sₙ = n/2(a + Uₙ).</p>`;
+}
+function checkQuiz(){
+ const answers={q1:'b',q2:'b',q3:'b',q4:'b',q5:'c'};let score=0,unanswered=[];
+ Object.keys(answers).forEach(k=>{const v=document.querySelector(`input[name="${k}"]:checked`);if(!v)unanswered.push(k);else if(v.value===answers[k])score++});
+ const el=document.getElementById('quizResult');
+ if(unanswered.length){el.innerHTML=`Kamu belum menjawab ${unanswered.length} soal. Lengkapi semua jawaban terlebih dahulu.`;return}
+ const msg=score===5?'Hebat! Semua jawaban benar.':score>=3?'Bagus! Pelajari kembali soal yang belum tepat.':'Tetap semangat! Baca materi dan contoh soal, lalu coba lagi.';
+ el.innerHTML=`Skor kamu: ${score}/5 (${score*20}/100).<br>${msg}<br><span class="small">Kunci: 1-B, 2-B, 3-B, 4-B, 5-C.</span>`;
+}
+function saveReflection(){
+ const fields=[['Hari ini saya menemukan bahwa',document.getElementById('r1').value],['Bagian yang masih membingungkan',document.getElementById('r2').value],['Cara memeriksa jawaban',document.getElementById('r3').value],['Keyakinan belajar',document.getElementById('mood').value]];
+ const result=document.getElementById('reflectionResult');result.style.display='block';
+ result.innerHTML='<h3>Refleksi Saya</h3>'+fields.map(f=>`<p><b>${f[0]}:</b> ${escapeHTML(f[1]||'(belum diisi)')}</p>`).join('');
+ window.print();
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+runSimulation();
+</script>
+</body>
+</html>
